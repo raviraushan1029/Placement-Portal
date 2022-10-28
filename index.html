@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        input{
+            font-style: italic;
+            border: 1px solid #CCCCCC;border-radius: 5px;
+            box-shadow: 0 5px 4px 0 rgb(168 168 168 / 60%) inset;
+            background-color:#E8F0FE;
+            margin-top: 4px;
+            font-size: 12px;
+            padding: 7px 6px;
+            width: 287px;
+        }
+    </style>
+    <script>
+        user=["admin","12016742","12016744","12016745","12016746","12016743"];
+        email=["PO1@gmail.com","s1@gmail.com","s2@gmail.com","s3@gmail.com","s4@gmail.com","ravi@gmail.com"];
+        number=["987XXXXXX1","987XXXXXX2","987XXXXXX3","987XXXXXX4","987XXXXXX5","887XXXXX95"];
+        cgpa=["N/A",7.6,6.5,8.5,9,8]
+        pass=["admin","ravi2","ravi3","ravi4","ravi5","ravi"];
+        course=["N/A","Btech CSE","Pharmacy","MBA","LAW","B.Tech"];
+        function login(){
+            if((document.getElementById("user").value==user[0]&&document.getElementById("pass").value==pass[0])||(document.getElementById("user").value==user[1]&&document.getElementById("pass").value==pass[1])||(document.getElementById("user").value==user[2]&&document.getElementById("pass").value==pass[2])||(document.getElementById("user").value==user[3]&&document.getElementById("pass").value==pass[3])||(document.getElementById("user").value==user[4]&&document.getElementById("pass").value==pass[4])||(document.getElementById("user").value==user[5]&&document.getElementById("pass").value==pass[5]))
+            {   var a = user.indexOf(document.getElementById("user").value);
+                if(document.getElementById("user").value.includes("admin"))location.replace("nextpo.html?userid="+user[a]+"&&email="+email[a]+"&&number="+number[a]);
+                else location.replace("nextst.html?userid="+user[a]+"&&email="+email[a]+"&&number="+number[a]+"&&cgpa="+cgpa[a]+"&&course="+course[a]);
+            }
+            
+            else 
+            alert("User Name or Password is incorrect");
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Portal Login</title>
+</head>
+<body style="background-color: #2e2e2e;">
+    <div  style="background-color:white;height:200px;width: 800px;margin-left: auto;margin-right: auto;">
+    <img src="header_bg.jpg" style="width: 100%;height: 48px;padding-bottom:30px;border-bottom: solid 4px #fad546;">
+    <img src="logo.png" style="position: relative;left:8px;bottom: 86px;">
+    <img src="placement_logo.png" alt="" style="position: absolute;right:8px;top: 10px;">
+    </div >
+    <div style="position: relative;width: 800px;margin-left: auto;margin-right: auto;bottom:60px">
+    <div style="background-color: #950607;padding:5px 0px;"><h1 style="color:#FFFFFF;text-align: center;position:relative;right:50px;margin:0px 0px;font-size:18px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Placement Portal Login </h1></div>
+    <img src="placement_bg.jpg" width="800px">
+    <div style="position: absolute;top: 40px;left: 0;right: 0;margin: 0 auto;width: fit-content;">Username<br><input type="text" name="" id="user" >  <br> Password <br> <input type="password"  id="pass"><br><br><button style="position: absolute;right:0px;background: linear-gradient(to bottom, #DB8787 0%, #DA3436 44%, #D10A0A 44%, #D20103 100%) ; border-radius: 3px;border: 1px solid #942911;cursor: pointer;color: #ffffff;font-family: arial;font-size: 13px;padding: 6px 14px;" onclick="login()">Login</button></div>
+</div>
+<div style="background-color:#FFFFFF;width: 800px;margin-left: auto;margin-right: auto;position: relative;bottom:64px">
+    <div style="background-color: #cccccc;padding:5px 0px;color:#666666;text-align: center;font-size:16px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"></div>
+<div style="text-align: right;padding-right:10px;"><h6 style="margin-bottom: 0px;">@COPYRIGHT BY</h6><h3 style="margin-top: 0px;padding-bottom: 10px;">RAVI RAUSHAN</h3></div>
+</div>
+</body>
+</html>

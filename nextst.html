@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    button {
+border:none;
+background-color:transparent;
+  border-right: 1px solid rgb(168 168 168 / 60%);
+  font-size: 11px;
+  height:30px;
+}
+button:active{
+    background-color: #fad546;
+    
+    
+}
+.c1{
+    background-color: #999999;
+    height:10px;   
+}
+.c2{
+   background-color:  #f4f3f3;
+   border: 1px solid #b8b8b8;;
+    height:10px;   
+}
+
+div.scroll{
+background-color: white;
+height: 230px;
+overflow-x: hidden;
+overflow-y: scroll;
+text-align: justify;
+padding: 15px;
+}
+.drive,.drive>td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+h5{
+    font-size: 10px;
+    margin: 0 0;
+}
+h6{
+    font-size: 9px;
+    margin: 0 0;
+    color: gray;
+}
+b{
+    font-size: 9px;
+    margin: 0 0;
+    color: black;
+}
+
+</style>
+<script>
+    var urlParams = new URLSearchParams(location.search);
+    var profile=urlParams.get('profile');
+    var userid=urlParams.get('userid');
+    var email=urlParams.get('email');
+    var cgpa=urlParams.get('cgpa');
+    var number=urlParams.get('number');
+    var course=urlParams.get('course');
+    var date=urlParams.get('date')||"26 june 2021";
+    var Xth=urlParams.get('XTH')||"NA";
+    var Xii=urlParams.get('Xii')||"NA";
+    
+    function anouncement(){
+        document.getElementById('scrol').scrollTo(0, 0); 
+        
+    }
+    
+    //localstorage.setItem('pageUrl'
+    </script>
+<body style="background-color: #2e2e2e;">
+    <div  style="position: relative;background-color:white;height:200px;width: 800px;margin-left: auto;margin-right: auto;">
+        <div  style="position:absolute;width: 615px;right:0px;top:49px;" id="navbar"><button onclick="window.scrollTo(0, 0)">Profile View</button><a href="#scrolbar"><button onclick="anouncement()">View announcement</button></a><a href="#upcomingDrive"><button >Upcoming drives</button></a><a href="#summary"><button>Summary</button></a><button onclick="location.replace('REgister.html')">Registration</button><a onclick="location.replace('index.html')" style="position:absolute;right:10px;top:8px;text-decoration:none;font-size:11px;color: black;"><img src="logout_icon.jpg"> Logout</a></div>
+    <img src="header_bg.jpg" style="width: 100%;height: 48px;padding-bottom:30px;border-bottom: solid 4px #fad546;">
+    
+    <img src="logo.png" style="position: relative;left:8px;bottom: 86px;">
+    <img src="placement_logo.png" alt="" style="position: absolute;right:8px;top: 10px;">
+    </div >
+    <div style="position: relative;width: 800px;height:200px;background-color: white;margin-left: auto;margin-right: auto;bottom:85px">
+        <span style="margin-left: 10px;position: relative;bottom: 30px;"><img id="photo" style="border:2px solid rgb(168 168 168 / 60%);" width="120px" height="140px"></span>
+        <table style="display: inline-block;margin-left: 15px;">
+            <tr><td class="c1">Prov. Reg No</td><td class="c2" id="userid"></td></tr>
+            <tr><td class="c1">Basic Details</td><td class="c2">Filled(Policy Accepted)</td></tr>
+            <tr><td class="c1">Placement Services<br>Status</td><td class="c2">Active</td></tr>
+            <tr><td class="c1">Email</td><td class="c2" id="Email"></td></tr>
+            <tr><td class="c1">Contact No</td><td class="c2" id="Number"></td></tr>
+            <tr><td class="c1">Program</td><td class="c2" id="course"></td></tr>
+            <tr><td class="c1">Company selected in</td><td class="c2">Not selected</td></tr>
+        </table>
+        <table style="display: inline-block;margin-left: 15px;">
+            <tr><td class="c1">CGPA</td><td class="c2" id="cgpa"></td></tr>
+            <tr><td class="c1">Reappear/Backlog</td><td class="c2">0</td></tr>
+            <tr><td class="c1">Pep Fee Details</td><td class="c2">Preparatory Session <br>Fee Paid In Full - 14000 </td></tr>
+            <tr><td class="c1">PEP FEE Payment Date</td><td class="c2" id="date"></td></tr>
+            <tr><td class="c1">X Marks(Passout)</td><td class="c2" id="10th"></td></tr>
+            <tr><td class="c1">XII Marks</td><td class="c2" id="12th"></td></tr>
+            <tr><td class="c1">Diploma Marks</td><td class="c2">NA% (NA)</td></tr>
+        </table>
+        <script>
+            document.getElementById("userid").innerHTML=userid;
+            document.getElementById("Email").innerHTML=email
+            document.getElementById("course").innerHTML=course;
+            document.getElementById("Number").innerHTML=number;
+            document.getElementById("cgpa").innerHTML=cgpa;
+            document.getElementById("date").innerHTML=date;
+            document.getElementById("10th").innerHTML=Xth;
+            document.getElementById("12th").innerHTML=Xii;
+            document.getElementById("photo").src=userid+".jpeg";
+        </script>
+        <hr>
+    </div>
+    
+    <div id="scrolbar" style="position: relative;width: 800px;height:290px;margin-left: auto;margin-right: auto;bottom:85px">
+        <div style="background-color: #950607;padding:5px 0px;"><h1 style="color:#FFFFFF;text-align: center;position:relative;margin:0px 0px;font-size:16px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Placement Announcements </h1></div>
+        <div class="scroll" id="scrol">
+<div style="border-left:1px solid gray;padding-left: 5px;padding-top: 5px;padding-bottom: 5px">
+            
+<h5>Schedule for the Webinar of ECLAT HOSPITALITY   (10/27/2022 9:58:54 AM)</h5>
+<h6>
+    This is for the information of all the concerned that the Webinar of  ECLAT HOSPITALITY is scheduled as follows:
+    <br>
+Reporting Date : 14th Oct 2022
+<br>
+Reporting Time: 10:00 A.M<br>
+
+Reporting Venue:  Block 32 -213<br>
+
+Notes:<br>
+
+1. You are kindly requested to please ensure that the students are in formals.<br>
+
+2. You are kindly requested to please convey to the students to keep their audio and video off during the session.<br>
+
+3. You are kindly requested to please convey to students that they can ask questions at the end  through chatbox.<br>
+
+4. You are kindly requested to please convey to students to join the link 10 mins before the scheduled time.
+
+</h6>
+
+ <b>
+Uploaded By: </b>
+<h6>Dr.H Pal Thethi <br>
+Division of Career Services  </h6>
+          </div>
+          <div style="border-left:1px solid gray;padding-left: 5px;background-color: #e5dbdb;padding-top: 5px;padding-bottom: 5px;">
+            
+            <h5>Final Result of Full Term Internship Drive by BROADRIDGE FINANCIAL SOLUTIONS INDIA PRIVATE LIMITED TC.2928.2023.30685   (10/26/2022 12:51:36 PM)</h5>
+            <h6>Heartiest Congratulations from Lovely Professional University to the following student selected through Full Term Internship Drive by <b> BROADRIDGE FINANCIAL SOLUTIONS INDIA PRIVATE LIMITED </b> TC.2928.2023.30685
+            </h6>
+            
+             <b>
+            ** 12102079    Akancha Sinha
+            <br>
+            Uploaded By: </b>
+            <h6>Dr.H Pal Thethi <br>
+            Division of Career Services</h6>
+                      </div>
+          <div style="border-left:1px solid gray;padding-left: 5px;padding-top: 5px;padding-bottom: 5px;">
+            
+            <h5>Final Result of Full Term Internship Drive by CROWE HORWATH TC.20004.2023.34319   (10/26/2022 12:49:04 PM)</h5>
+            <h6>Heartiest Congratulations from Lovely Professional University to the following student selected through Full Term Internship Drive by <b> CROWE HORWATH</b> TC.20004.2023.34319
+                
+            </h6>
+            
+             <b>
+                ** 11912668    Varun Sai Kachibhotla
+            <br>
+            Uploaded By: </b>
+            <h6>Dr.H Pal Thethi <br>
+            Division of Career Services</h6>
+                      </div>
+<div style="border-left:1px solid gray;padding-left: 5px;background-color: #e5dbdb;padding-top: 5px;padding-bottom: 5px;">
+            
+            <h5>Final Result of Information Notice Drive by BAJAJ FINSERV HEALTH IN.25951.2024.30879   (10/26/2022 12:43:06 PM)</h5>
+            <h6>Heartiest Congratulations from Lovely Professional University to the following students selected through Information Notice Drive by <b>BAJAJ FINSERV HEALTH IN.25951.2024.30879 </b>
+            </h6>
+            
+             <b>
+            
+** 12013790    Sushant Kumar
+<br>
+ ** 12007565    Abdullah
+            <br>
+            Uploaded By: </b>
+            <h6>Dr.H Pal Thethi <br>
+            Division of Career Services</h6>
+                      </div>
+                      
+
+   
+
+
+                      
+        </div>
+
+    </div>
+    <div  style="position: relative;width: 800px;height:fit-content;background-color: white;margin-left: auto;margin-right: auto;bottom:85px">
+        <div id="upcomingDrive" style="background-color: #950607;padding:5px 0px;"><h1 style="color:#FFFFFF;text-align: center;position:relative;margin:0px 0px;font-size:16px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Upcoming Placement Drives </h1></div>
+        <table class="drive" style="width:100%;text-align: center;">
+            <tr class="drive"><td >Drive Date</td><td >	Register By	</td><td>Company</td><td>Job Profile</td><td>	Status	</td><td>Registered</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(0)">Click To Cancil <br>Registration</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(1)">Click To <br>Register</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(2)">Click To Cancil <br>Registration</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(3)">Click To <br>Register</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(4)">Click To <br>Register</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Close	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(5)">No</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Close	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(6)">No</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Close	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(7)">No</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Close	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(8)">No</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Close	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(9)">NO</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Close	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(10)">No</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Close	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(11)">No</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Close	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(12)">No</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Close	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(13)">No</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Close	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(14)">No</Button></td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Close	</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;" class="cancil" onclick="change(15)">No</Button></td></tr>
+            
+            
+        </table>
+        <script>
+            function change(b){
+                if(document.getElementsByClassName("cancil")[b].innerHTML=="Click To Cancel <br>Registration")document.getElementsByClassName("cancil")[b].innerHTML="Click To <br>Register";
+                else if(document.getElementsByClassName("cancil")[b].innerHTML=="Click To <br>Register")document.getElementsByClassName("cancil")[b].innerHTML="Click To Cancil <br>Registration";
+            }
+        </script>
+    </div>
+    <div  style="position: relative;width: 800px;height:fit-content;background-color: white;margin-left: auto;margin-right: auto;bottom:85px">
+        <img id="summary" src="summary.png" width="800px">
+    </div>
+    
+    <!--
+        style="position: absolute;top:0px"
+        <div style="position: relative;width: 800px;height:100px;background-color: purple;margin-left: auto;margin-right: auto;bottom:85px">
+        
+    </div-->
+ 
+</body>
+</html>

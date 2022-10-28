@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    button {
+border:none;
+background-color:transparent;
+  border-right: 1px solid rgb(168 168 168 / 60%);
+  font-size: 11px;
+  height:30px;
+}
+button:active{
+    background-color: #fad546;
+    
+    
+}
+.c1{
+    background-color: #999999;
+    height:10px;   
+}
+.c2{
+   background-color:  #f4f3f3;
+   border: 1px solid #b8b8b8;;
+    height:10px;   
+}
+
+div.scroll{
+background-color: white;
+height: 230px;
+overflow-x: hidden;
+overflow-y: scroll;
+text-align: justify;
+padding: 15px;
+}
+.drive{
+  border: 1px solid black;
+  
+}
+.drives{
+  
+  border-collapse: collapse;
+}
+h5{
+    font-size: 10px;
+    margin: 0 0;
+}
+h6{
+    font-size: 9px;
+    margin: 0 0;
+    color: gray;
+}
+b{
+    font-size: 9px;
+    margin: 0 0;
+    color: black;
+}
+
+</style>
+<script>
+    var Status=["Block","Unblock","Block","Unblock","Block"];
+    function anouncement(){
+        document.getElementById('scrol').scrollTo(0, 0); 
+        
+    }
+    
+    //localstorage.setItem('pageUrl'
+    </script>
+<body style="background-color: #2e2e2e;">
+    <div  style="position: relative;background-color:white;height:200px;width: 800px;margin-left: auto;margin-right: auto;">
+        <div  style="position:absolute;width: 615px;right:0px;top:49px;" id="navbar"><button onclick="window.scrollTo(0, 0)">List of Student</button><a href="#upcomingDrive"><button >View Drives</button></a><a href="#scrolbar"><button onclick="anouncement()">Announcement</button></a><a href="#summary"><button>Summary</button></a><button onclick="location.replace('REgister.html')">Registration</button><a onclick="location.replace('index.html')" style="position:absolute;right:10px;top:8px;text-decoration:none;font-size:11px;color: black;"><img src="logout_icon.jpg"> Logout</a></div>
+    <img src="header_bg.jpg" style="width: 100%;height: 48px;padding-bottom:30px;border-bottom: solid 4px #fad546;">
+    <img src="logo.png" style="position: relative;left:8px;bottom: 86px;">
+    <img src="placement_logo.png" alt="" style="position: absolute;right:8px;top: 10px;">
+    </div >
+    <div  style="position: relative;width: 800px;height:fit-content;background-color: white;margin-left: auto;margin-right: auto;bottom:85px">
+        <div style="position:relative;background-color: #950607;padding:5px 0px;"><h1 style="color:#FFFFFF;text-align: center;position:relative;margin:0px 0px;font-size:16px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Student List </h1>
+           <span  style="position:absolute;right: 0;top:5px"> <select name="watches" id="watches" onchange="filter(document.getElementById('watches').value)">
+            <option value="<">CGPA<</option>
+            <option value="=">CGPA=</option>
+            <option value=">">CGPA></option>
+          </select>
+          <input type="number" id="value" placeholder="value"  onchange="filter(document.getElementById('watches').value)"></span></div>
+        <table class="drives" id="Testing" style="width:100%;text-align: center;">
+            
+        </table>
+        <script>
+            var Cgpa=[5,6,8.7,9,10];
+            
+            function block_unblock(a,b){
+                if(document.getElementsByClassName("block_unblock")[b].innerHTML=="Block"){document.getElementsByClassName("block_unblock")[b].innerHTML="Unblock";Status[a]="Unblock";}
+                else {document.getElementsByClassName("block_unblock")[b].innerHTML="Block";Status[a]="Block";}
+            }
+            tr1="<tr ><td class=\"drive\">Reg.No.</td><td class=\"drive\">Course</td><td class=\"drive\">Cgpa</td><td class=\"drive\">	Status	</td><td class=\"drive\">Company</td></tr>";
+            tr2=["<tr ><td class=\"drive\">12008281</td><td class=\"drive\">BCA</td><td class=\"drive\">5</td><td class=\"drive\"><Button class=\"block_unblock\" style=\"background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;\" onclick=\"block_unblock(0,","<tr ><td class=\"drive\">12008282</td><td class=\"drive\">BCA</td><td class=\"drive\">6</td><td class=\"drive\"><Button class=\"block_unblock\" style=\"background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;\" onclick=\"block_unblock(1,","<tr ><td class=\"drive\">12008283</td><td class=\"drive\">BCA</td><td class=\"drive\">8.7</td><td class=\"drive\"><Button class=\"block_unblock\" style=\"background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;\" onclick=\"block_unblock(2,","<tr ><td class=\"drive\">12008284</td><td class=\"drive\">BCA</td><td class=\"drive\">9</td><td class=\"drive\"><Button class=\"block_unblock\" style=\"background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;\" onclick=\"block_unblock(3,","<tr ><td class=\"drive\">12008285</td><td class=\"drive\">BCA</td><td class=\"drive\">10</td><td class=\"drive\"><Button class=\"block_unblock\" style=\"background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;\" onclick=\"block_unblock(4,"];
+            random=[0,1,2,3,4];
+            function filter(a){
+            tr3=tr1;
+            var x=document.getElementById('value').value;
+            if(x!=""){
+            if(x<=10 && x>=0){
+                if(a=="<") {
+                    random=[];
+                    for(i=0;i<Cgpa.length;i++)
+                    if(Cgpa[i]<x)random.push(i);
+                    }
+                else if(a==">"){
+                    random=[];
+                    for(i=0;i<Cgpa.length;i++)
+                    if(Cgpa[i]>x)random.push(i);
+                    }
+                else {
+                    random=[];
+                    for(i=0;i<Cgpa.length;i++)
+                    if(Cgpa[i]==x)random.push(i);
+                    ;}
+            }
+            else{ alert("Out of range");document.getElementById('value').value="";}}
+            else random=[0,1,2,3,4];            
+            for(i=0;i<random.length;i++)tr3+=tr2[random[i]]+i+")\">"+Status[random[i]]+"</Button></td><td class=\"drive\">Not Placed</td></tr>";
+            if(random.length!=0)
+            document.getElementById("Testing").innerHTML=tr3;
+            else
+            document.getElementById("Testing").innerHTML="<br>No records match the searched<br><br>";
+            }
+            filter("NA");
+        </script>
+        
+    </div>
+    
+    <div  style="position: relative;width: 800px;height:fit-content;background-color: white;margin-left: auto;margin-right: auto;bottom:85px">
+        <div id="upcomingDrive" style="background-color: #950607;padding:5px 0px;"><h1 style="color:#FFFFFF;text-align: center;position:relative;margin:0px 0px;font-size:16px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Upcoming Placement Drives </h1><a style="position: absolute;top:5px;right:5px;" id="plus"><img src="plus.png" width="20px" onclick="pluscheck(0)"></a></div>
+        <table class="drive" id="Table_data" style="width:100%;text-align: center;">
+            <tr class="drive"><td >Drive Date</td><td >	Register By	</td><td>Company</td><td>Job Profile</td><td>	Status	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            <tr class="drive"><td >Will be Notified <br> Later</td><td >04/11/2022 13:00</td><td>BROWSERSTACK</td><td><Button style="background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;">See job profile</Button></td><td>	Open	</td></tr>
+            
+        </table>
+        <script>
+            var tabledata;
+          function  pluscheck(a){
+            alert(a);
+            if(a==0){
+                document.getElementById("plus").style.display='none';
+                
+                tabledata=document.getElementById("Table_data").innerHTML;
+                document.getElementById("Table_data").innerHTML+="<tr style=\"height:22px\"><td colspan=\"5\">Last Date to Register:<input type=\"text\"  id=\"Ds\"> Company<input type=\"text\"  id=\"Cn\"> <img src=\"checkbox.png\" width=\"18px\"  onclick=\"pluscheck(1)\"><td></tr>";
+                
+            }
+            else if(document.getElementById("Ds").value!=""&&document.getElementById("Cn").value!=""){
+                document.getElementById("plus").style.display='inline';
+                document.getElementById("Table_data").innerHTML=tabledata+"<tr class=\"drive\"><td >Will be Notified <br> Later</td><td >"+document.getElementById("Ds").value+"</td><td>"+document.getElementById("Cn").value+"</td><td><Button style=\"background-color: #ffec64;border: 1px solid #ffaa22;cursor: pointer;color: #333333;font-family: arial;font-size: 12px;font-weight: bold;padding: 0px 10px;width: 120px;text-align: center;\">See job profile</Button></td><td>	Open	</td></tr>";
+                document.getElementById("check").style.display='none';
+                
+            }
+          }
+        </script>
+    </div>
+    <div id="scrolbar" style="position: relative;width: 800px;height:290px;margin-left: auto;margin-right: auto;bottom:85px">
+        <div style="background-color: #950607;padding:5px 0px;"><h1 style="color:#FFFFFF;text-align: center;position:relative;margin:0px 0px;font-size:16px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Announcements </h1></div>
+        <div class="scroll" id="scrol">
+<div style="border-left:1px solid gray;padding-left: 5px;padding-top: 5px;padding-bottom: 5px">
+            
+<h5>Schedule for the Webinar of ECLAT HOSPITALITY   (10/27/2022 9:58:54 AM)</h5>
+<h6>
+    This is for the information of all the concerned that the Webinar of  ECLAT HOSPITALITY is scheduled as follows:
+    <br>
+Reporting Date : 14th Oct 2022
+<br>
+Reporting Time: 10:00 A.M<br>
+
+Reporting Venue:  Block 32 -213<br>
+
+Notes:<br>
+
+1. You are kindly requested to please ensure that the students are in formals.<br>
+
+2. You are kindly requested to please convey to the students to keep their audio and video off during the session.<br>
+
+3. You are kindly requested to please convey to students that they can ask questions at the end  through chatbox.<br>
+
+4. You are kindly requested to please convey to students to join the link 10 mins before the scheduled time.
+
+</h6>
+
+ <b>
+Uploaded By: </b>
+<h6>Dr.H Pal Thethi <br>
+Division of Career Services  </h6>
+          </div>
+          <div style="border-left:1px solid gray;padding-left: 5px;background-color: #e5dbdb;padding-top: 5px;padding-bottom: 5px;">
+            
+            <h5>Final Result of Full Term Internship Drive by BROADRIDGE FINANCIAL SOLUTIONS INDIA PRIVATE LIMITED TC.2928.2023.30685   (10/26/2022 12:51:36 PM)</h5>
+            <h6>Heartiest Congratulations from Lovely Professional University to the following student selected through Full Term Internship Drive by <b> BROADRIDGE FINANCIAL SOLUTIONS INDIA PRIVATE LIMITED </b> TC.2928.2023.30685
+            </h6>
+            
+             <b>
+            ** 12102079    Akancha Sinha
+            <br>
+            Uploaded By: </b>
+            <h6>Dr.H Pal Thethi <br>
+            Division of Career Services</h6>
+                      </div>
+          <div style="border-left:1px solid gray;padding-left: 5px;padding-top: 5px;padding-bottom: 5px;">
+            
+            <h5>Final Result of Full Term Internship Drive by CROWE HORWATH TC.20004.2023.34319   (10/26/2022 12:49:04 PM)</h5>
+            <h6>Heartiest Congratulations from Lovely Professional University to the following student selected through Full Term Internship Drive by <b> CROWE HORWATH</b> TC.20004.2023.34319
+                
+            </h6>
+            
+             <b>
+                ** 11912668    Varun Sai Kachibhotla
+            <br>
+            Uploaded By: </b>
+            <h6>Dr.H Pal Thethi <br>
+            Division of Career Services</h6>
+                      </div>
+<div style="border-left:1px solid gray;padding-left: 5px;background-color: #e5dbdb;padding-top: 5px;padding-bottom: 5px;">
+            
+            <h5>Final Result of Information Notice Drive by BAJAJ FINSERV HEALTH IN.25951.2024.30879   (10/26/2022 12:43:06 PM)</h5>
+            <h6>Heartiest Congratulations from Lovely Professional University to the following students selected through Information Notice Drive by <b>BAJAJ FINSERV HEALTH IN.25951.2024.30879 </b>
+            </h6>
+            
+             <b>
+            
+** 12013790    Sushant Kumar
+<br>
+ ** 12007565    Abdullah
+            <br>
+            Uploaded By: </b>
+            <h6>Dr.H Pal Thethi <br>
+            Division of Career Services</h6>
+                      </div>
+                      
+
+   
+
+
+                      
+        </div>
+
+    </div>
+    <div  style="position: relative;width: 800px;height:fit-content;background-color: white;margin-left: auto;margin-right: auto;bottom:85px">
+        <img id="summary" src="sumary.png" width="800px">
+    </div>
+    
+    <!--
+        style="position: absolute;top:0px"
+        <div style="position: relative;width: 800px;height:100px;background-color: purple;margin-left: auto;margin-right: auto;bottom:85px">
+        
+    </div-->
+ 
+</body>
+</html>
